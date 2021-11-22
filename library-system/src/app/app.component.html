@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">Library System</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a 
+          class="nav-link"
+          routerLinkActive="active"
+          aria-current="page"
+          routerLink="/"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="admins">Admin</a> <!--Test Only: Remove this afterwards-->
+        </li>
+      </ul>
+    <ul class="navbar-nav ml-auto">
+      <li *ngIf="!user" class="nav-item">
+        <a
+        class="nav-link" routerLink="login">Sign In</a> <!--Test: Once signed in will direct to admin page (To change route go to "login.component.ts")-->
+      </li>
+      <li *ngIf="!user" class="nav-item">
+        <a class="nav-link" routerLink="register">Sign up</a>
+      </li>
+      <li *ngIf="user" class="nav-item">
+        <a (click)="logout()" role="button" class="nav-link" aria-current="page"
+          >Logout</a
+        >
+      </li>
+    </ul>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+
+
+
+
+

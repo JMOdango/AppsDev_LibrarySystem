@@ -1,0 +1,102 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card border-0 shadow rounded-3 my-5">
+        <div class="card-body p-4 p-sm-5">
+          <h5 class="card-title text-center mb-5 fw-light fs-5">Create Account</h5>
+          <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" [compare]="['password', 'confirmPassword']">
+
+            <div class="form-floating mb-3">
+              <label for="name">Full Name</label>
+              <input 
+              type="text" 
+              class="form-control" 
+              name="name" 
+              id="name" 
+              placeholder="Full Name" 
+              [(ngModel)]="user.name" 
+              #nameInput="ngModel" 
+              required 
+              >
+            
+              <div class="help-block" *ngIf="!nameInput.valid && nameInput.touched">
+                <div class="help-block" *ngIf="nameInput.errors?.required">Name must not be empty.</div>
+              </div>
+            
+            </div>
+
+            <div class="form-floating mb-3">
+              <label for="email">Email</label>
+              <input 
+              type="email" 
+              class="form-control" 
+              name="email" 
+              id="email" 
+              placeholder="Email" 
+              [(ngModel)]="user.email" 
+              #emailInput="ngModel" 
+              required 
+              email
+              >
+            
+              <div class="help-block" *ngIf="!emailInput.valid && emailInput.touched">
+                <div class="help-block" *ngIf="emailInput.errors?.required">Email must not be empty.</div>
+                <div class="help-block" *ngIf="emailInput.errors?.email">Email must be a valid email address.</div>
+              </div>
+            
+            </div>
+
+            <div class="form-floating mb-3">
+              <label for="password">Password</label>
+              <input 
+              type="password" 
+              class="form-control" 
+              name="password" 
+              id="password" 
+              placeholder="Password" 
+              [(ngModel)]="user.password" 
+              #passwordInput="ngModel" 
+              required minlength="8"
+              >
+            
+              <div class="help-block" *ngIf="!passwordInput.valid && passwordInput.touched">
+                <div class="help-block" *ngIf="passwordInput.errors?.required">Password must not be empty.</div>
+                <div class="help-block" *ngIf="passwordInput.errors?.minlength">Password must have at least 8 characters.</div>
+              </div>
+
+            </div>
+
+            <div class="form-floating mb-3">
+              <label for="confirmPassword">Confirm Password</label>
+              <input 
+              type="password" 
+              class="form-control" 
+              name="confirmPassword" 
+              id="confirmPassword" 
+              placeholder="Confirm Password" 
+              [(ngModel)]="user.confirmPass" 
+              #confirmPasswordInput="ngModel" 
+              required minlength="8">
+              
+              <div class="help-block" *ngIf="!confirmPasswordInput.valid && confirmPasswordInput.touched">
+                <div class="help-block" *ngIf="confirmPasswordInput.errors?.required">Password must not be empty.</div>
+                <div class="help-block" *ngIf="confirmPasswordInput.errors?.minlength">Password must have at least 8 characters.</div>
+                <div class="help-block" *ngIf="confirmPasswordInput.errors?.compare">Password must match.</div>
+              </div>
+            
+            </div>
+
+            <div class="d-grid my-4">
+              <button [disabled]="f.form.invalid" class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Create</button>
+            </div>
+            <hr class="my-4">
+            <div class="d-grid mb-2">
+              <label>Already have an account? <a class="registerBtn" routerLink="/login">Sign In</a></label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

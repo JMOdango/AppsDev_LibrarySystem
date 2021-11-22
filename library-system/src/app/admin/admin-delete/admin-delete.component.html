@@ -1,0 +1,25 @@
+<ng-container *ngIf="!adminId">
+    <div>
+      <input
+        type="text"
+        class="form-control"
+        #adminId
+        placeholder="Admin ID"
+      />
+    </div>
+    <br />
+    <button
+      type="submit"
+      (click)="onDelete(adminId.value)"
+      class="btn btn-danger"
+    >
+      Delete Admin
+    </button>
+  </ng-container>
+  
+  <ng-container *ngIf="adminId">
+    <button type="submit" (click)="onReuseDelete()" class="btn btn-danger">
+      Delete Admin
+    </button>
+  </ng-container>
+  
