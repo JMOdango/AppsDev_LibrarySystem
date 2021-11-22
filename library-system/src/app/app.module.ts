@@ -25,13 +25,13 @@ import { CompareValidatorDirective } from './helper/compare-validator.directive'
 
 @NgModule({
   declarations: [
-    AppComponent, 
-    HomeComponent, 
-    NotFoundComponent, 
-    
-    LoginComponent, 
-    RegisterFormComponent, 
-    CompareValidatorDirective, 
+    AppComponent,
+    HomeComponent,
+    NotFoundComponent,
+
+    LoginComponent,
+    RegisterFormComponent,
+    CompareValidatorDirective,
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
