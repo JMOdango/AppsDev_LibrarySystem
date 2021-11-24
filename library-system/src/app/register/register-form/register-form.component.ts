@@ -30,10 +30,10 @@ export class RegisterFormComponent implements OnInit {
   register(){
     const {email, password} = this.user;
     this.authService.register(email, password).then(() => {
-      this.router.navigate(["/admins"]); //<--- Change "admins" to desired route
+      this.router.navigate(["/users"]); //<--- Change "admins" to desired route
       this.toastr.success("Account created successfully.");
     }).catch(err => {
-      this.toastr.error("Error creating account.")
+      this.toastr.error("There's a problem creating your account. Account might already exist.")
     })
   }
 

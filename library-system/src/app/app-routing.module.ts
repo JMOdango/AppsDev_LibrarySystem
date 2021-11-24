@@ -5,7 +5,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { RegisterFormComponent } from './register/register-form/register-form.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard} from './guards/auth.guard';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 const routes: Routes = [
   {
     path: 'users',
@@ -47,7 +47,8 @@ How to use:
 },*/
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), FormsModule,
+    ReactiveFormsModule],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

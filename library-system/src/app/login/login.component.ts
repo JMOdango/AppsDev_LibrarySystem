@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
     email: '',
     password: '',
   }
- 
+
   constructor(
     private authService: AuthService,
     private router: Router,
@@ -32,9 +32,9 @@ export class LoginComponent implements OnInit {
     const {email, password} = this.user;
     this.authService.login(email, password).then(() => {
       this.toastr.success("Logged in successfully.")
-      this.router.navigate(["/admins"]) //<--- Change "admins" to desired route
+      this.router.navigate(["/users"]) //<--- Change "admins" to desired route
     }).catch(err => {
-      this.toastr.error("Account does not exist. Enter a different account or create a new one.");
+      this.toastr.error("Error signing in. Please check your password or create a new account.");
     })
   }
 
