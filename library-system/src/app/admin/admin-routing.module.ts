@@ -7,7 +7,10 @@ const routes: Routes = [ {
   component: AdminHomeComponent,
 },];
 
-const routes: Routes = [];
+const routes: Routes = [ {
+  path: '',
+  component: AdminHomeComponent,
+},];
 
 @NgModule({
   imports: [RouterModule.forChild(routes), FormsModule, ReactiveFormsModule],
