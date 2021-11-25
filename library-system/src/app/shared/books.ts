@@ -3,5 +3,6 @@ export interface Books {
     Title: string;
     Author: string;
     Genre: string;
-    ISPN: string;
+    ISBN: string;
+   
 }

@@ -13,7 +13,7 @@ export class BooksHomeComponent implements OnInit {
     Title: ['', Validators.required],
     Author: ['', Validators.required],
     Genre: ['', Validators.required],
-    ISPN: ['', Validators.required],
+    ISBN: ['', Validators.required],
   });
 
   books$ = [];

@@ -14,7 +14,8 @@ export class BooksAddComponent implements OnInit {
     Title: ['', Validators.required],
     Author: ['', Validators.required],
     Genre: ['', Validators.required],
-    ISPN: ['', Validators.required],
+    ISBN: ['', Validators.required],
+   
   });
 
   constructor(private fb: FormBuilder, private crud: BooksService) { }
@@ -28,7 +29,8 @@ export class BooksAddComponent implements OnInit {
       Title: this.f.Title.value,
       Author: this.f.Author.value,
       Genre: this.f.Genre.value,
-      ISPN: this.f.ISPN.value,
+      ISBN: this.f.IBPN.value,
+  
     };
 
     this.crud.addBooks(payload);
