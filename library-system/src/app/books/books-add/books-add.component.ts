@@ -29,7 +29,7 @@ export class BooksAddComponent implements OnInit {
       Title: this.f.Title.value,
       Author: this.f.Author.value,
       Genre: this.f.Genre.value,
-      ISBN: this.f.IBPN.value,
+      ISBN: this.f.ISBN.value,
   
     };
 
