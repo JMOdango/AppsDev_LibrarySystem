@@ -1,1 +1,26 @@
 <p>books-delete works!</p>
+<ng-container *ngIf="!bookId">
+    <div>
+      <input
+        type="text"
+        class="form-control"
+        #bookId
+        placeholder="Book ID"
+      />
+    </div>
+    <br />
+    <button
+      type="submit"
+      (click)="onDelete(bookId.value)"
+      class="btn btn-danger"
+    >
+      Delete Book
+    </button>
+  </ng-container>
+  
+  <ng-container *ngIf="bookId">
+    <button type="submit" (click)="onReuseDelete()" class="btn btn-danger">
+      Delete Book
+    </button>
+  </ng-container>
+ 

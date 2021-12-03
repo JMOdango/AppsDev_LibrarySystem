@@ -6,17 +6,18 @@
 >
   <div class="card-header title">
     <!-- <span class="id">{{ books.$key }}</span> -->
-    <span class="id">{{ books.ISBN}}</span>
+    <span class="id">ISBN: {{ books.ISBN}}</span>
     <span class="edit" (click)="onClick(i)"
       ><i class="bi bi-pencil-square editing"></i
     ></span>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
-      {{ books.Title }}
+      Title: {{ books.Title }}
     </li>
-    <li class="list-group-item">{{ books.Author }}</li>
-    <li class="list-group-item">{{ books.Genre }}</li>
+    <li class="list-group-item">Author: {{ books.Author }}</li>
+    <li class="list-group-item">Genre: {{ books.Genre }}</li>
+    <li class="list-group-item">ID: {{ books.$key }}</li>
   </ul>
 </div>
 
