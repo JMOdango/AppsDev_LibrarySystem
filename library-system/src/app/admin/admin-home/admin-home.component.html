@@ -9,7 +9,7 @@
       <div class="col ml-5 mt-2" *ngIf="admins$">
         <app-admin-card
           [admins$]="admins$"
-          (selectedStudent)="onEdit($event)"
+          (selectedBook)="onEdit($event)"
         ></app-admin-card>
       </div>
       <div class="col mt-2" *ngIf="editing">

@@ -7,13 +7,13 @@
          
         </div>
       </div>
-      <!-- <div class="col ml-5 mt-2" *ngIf="students$">
-        <app-student-card
-          [students$]="students$"
-          (selectedStudent)="onEdit($event)"
-        ></app-student-card>
+      <div class="col ml-5 mt-2" *ngIf="books$">
+        <app-book-card
+          [books$]="books$"
+          (selectedBook)="onEdit($event)"
+        ></app-book-card>
       </div>
-      <div class="col mt-2" *ngIf="editing">
+       <!--<div class="col mt-2" *ngIf="editing">
         <app-student-edit
           [student]="students$[editingIndex]"
           (editStatus)="editComplete($event)"
