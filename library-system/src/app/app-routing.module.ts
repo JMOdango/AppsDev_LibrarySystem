@@ -24,7 +24,7 @@ const routes: Routes = [
   },
   {
     path: 'register',
-    component: RegisterFormComponent,  
+    component: RegisterFormComponent,
   },
   {
     path: 'login',
@@ -40,15 +40,15 @@ const routes: Routes = [
   },
 ];
 
-/*AuthGuard (If used, if user is not logged in 
-and they try to access a page, they will be redirected 
+/*AuthGuard (If used, if user is not logged in
+and they try to access a page, they will be redirected
 back to the login page.)
 
 How to use:
 {
   path: '',
-  component: HomeComponent, 
-  canActivate: [AuthGuard]
+  component: HomeComponent,
+  canActivate: [AuthGuard],
 },*/
 
 @NgModule({

@@ -1,8 +1,5 @@
 export interface User {
     $key: string;
-    firstName: string;
-    lastName: string;
+    name: string;
     email: string;
-    mobileNumber: number;
   }
-  

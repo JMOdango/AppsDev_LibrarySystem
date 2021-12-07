@@ -16,15 +16,13 @@ import { ToastrService } from 'ngx-toastr';
 export class AppComponent implements OnInit {
   form = this.fb.group({
     $key: [''],
-    firstName: ['', Validators.required],
-    lastName: ['', Validators.required],
+    name: ['', Validators.required],
     email: [
       '',
       {
         validators: [Validators.required, Validators.email],
       },
     ],
-    mobileNumber: ['', Validators.required],
   });
 
   user: any;
@@ -34,18 +32,18 @@ export class AppComponent implements OnInit {
   editingIndex!: number;
 
   constructor(
-    private fb: FormBuilder, 
-    private crud: UserService,
+    private fb: FormBuilder,
+    private userService: UserService,
     private authService: AuthService,
     private router: Router,
     private toastr: ToastrService,
     ) {}
 
   ngOnInit(): void {
-    this.crud.getUsers().subscribe((val) => {
+    this.userService.getUsers().subscribe((val) => {
       this.users$ = val;
     });
-    
+
     this.authService.getAuth().subscribe(user => {
       this.user = user;
     })
