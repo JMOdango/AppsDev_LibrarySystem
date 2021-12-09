@@ -12,10 +12,9 @@ export class AuthService {
 
   constructor(private afAuth: AngularFireAuth) { }
 
-  login(email:string, password:string){
-    return this.afAuth.setPersistence(this.rememberUser).then(() => {
-      return this.afAuth.signInWithEmailAndPassword(email, password);
-    });
+  async login(email:string, password:string){
+    await this.afAuth.setPersistence(this.rememberUser);
+    return await this.afAuth.signInWithEmailAndPassword(email, password);
   }
 
   loginWithGoogle(){
