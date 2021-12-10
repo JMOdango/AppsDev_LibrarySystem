@@ -1,11 +1,14 @@
 <p>book-card works!</p>
+<label for="genreFilter">Filter by Genre:</label>
+
+
+
 <div
   class="card"
   style="width: 18rem; margin-top: 10px"
   *ngFor="let books of books$; index as i"
 >
   <div class="card-header title">
-    <!-- <span class="id">{{ books.$key }}</span> -->
     <span class="id">ISBN: {{ books.ISBN}}</span>
     <span class="edit" (click)="onClick(i)"
       ><i class="bi bi-pencil-square editing"></i

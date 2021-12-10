@@ -15,6 +15,7 @@ export class BooksDeleteComponent implements OnInit {
 
   onDelete(id: string) {
     this.crud.removeBooks(id);
+    alert("Book deleted!");
   }
 
   onReuseDelete() {

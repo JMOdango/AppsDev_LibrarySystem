@@ -1,0 +1,31 @@
+<p>books-list works!</p>
+<label>Filter by Genre:</label>
+
+<select [(ngModel)] = "Genre" (change)="filterExact ('Genre', Genre)">
+  
+  <option value="Fantasy">Fantasy</option>
+  <option value="Science">Science</option>
+</select>
+
+<button *ngIf = "Genre"
+        (click)="removeFilter('Genre')">
+        Remove Filter
+</button>
+
+<h2>Books</h2> 
+
+<div *ngFor = "let book of filteredBooks">
+     <h6>{{book.Title}}</h6>
+</div>
+
+
+<!-- <div *ngIf = "books?.length > 0; else noBooks">
+  <ul *ngFor = "let books of books" class="collection">
+     <li class="collection-book">{{books.Title}}</li>
+  </ul>
+</div> -->
+
+<!-- <ng-template #noBooks>
+    <hr>
+    <h5> There are no books to list</h5>
+</ng-template> -->

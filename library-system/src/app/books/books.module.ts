@@ -9,16 +9,30 @@ import { BooksHomeComponent } from './books-home/books-home.component';
 import { BookCardComponent } from './book-card/book-card.component';
 
 
+import {
+  AngularFirestore,
+  AngularFirestoreModule,
+} from '@angular/fire/compat/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'evironment';
+
+import { BooksService } from '../shared/books.service';
+import { BooksListComponent } from './books-list/books-list.component';
 @NgModule({
   declarations: [
     BooksAddComponent,
     BooksDeleteComponent,
     BooksHomeComponent,
-    BookCardComponent
+    BookCardComponent,
+    BooksListComponent,
+ 
   ],
   imports: [
     CommonModule,
-    BooksRoutingModule
-  ]
+    BooksRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+  ],
+  providers: [ BooksService]
 })
 export class BooksModule { }
