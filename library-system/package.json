@@ -26,7 +26,7 @@
     "angularfire2": "^5.4.2",
     "bootstrap": "^4.5.3",
     "bootstrap-icons": "^1.6.1",
-    "firebase": "^9.4.1",
+    "firebase": "^9.6.0",
     "ngx-bootstrap": "^7.1.0",
     "ngx-toastr": "^14.2.1",
     "rxfire": "^6.0.0",

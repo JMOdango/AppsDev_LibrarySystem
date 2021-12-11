@@ -35,6 +35,7 @@ export class BooksAddComponent implements OnInit {
 
     this.crud.addBooks(payload);
     this.form.reset();
+    alert("Book added!"); 
   }
 
   get f() {
