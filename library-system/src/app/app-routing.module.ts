@@ -11,16 +11,19 @@ const routes: Routes = [
     path: 'users',
     loadChildren: () =>
       import('./user/user.module').then((m) => m.UserModule),
+      canActivate: [AuthGuard],
   },
   {
     path: 'admins',
     loadChildren: () =>
       import('./admin/admin.module').then((m) => m.AdminModule),
+      canActivate: [AuthGuard],
   },
   {
     path: 'books',
     loadChildren: () =>
       import('./books/books.module').then((m) => m.BooksModule),
+      canActivate: [AuthGuard],
   },
   {
     path: 'register',

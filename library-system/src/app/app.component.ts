@@ -40,10 +40,6 @@ export class AppComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-    this.userService.getUsers().subscribe((val) => {
-      this.users$ = val;
-    });
-
     this.authService.getAuth().subscribe(user => {
       this.user = user;
     })

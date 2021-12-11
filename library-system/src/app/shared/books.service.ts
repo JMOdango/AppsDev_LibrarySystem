@@ -12,12 +12,13 @@ export class BooksService {
   private booksCollection: AngularFirestoreCollection<Books>;
   books$!: Observable<Books[]>;
 
-  constructor(private afs: AngularFirestore) { 
+  constructor(private afs: AngularFirestore) {
     this.booksCollection = this.afs.collection<Books>('Books');
     this.books$ = this.booksCollection.valueChanges();
   }
 
   addBooks(books: Books) {
+    console.log(books);
     const pushkey = this.afs.createId();
     books.$key = pushkey;
     this.booksCollection.doc(pushkey).set(books);

@@ -18,40 +18,19 @@ export class UserService {
     this.user$ = this.usersCollection.valueChanges();
   }
 
-  /*updateUser(id: string, email: string, name: string) {
-    return this.afs.doc('/users'+id).set({
+  addUser(id: string, email: string, name: string){
+    return this.afs.doc('/Users/'+id).set({
       name: name,
       email: email
-      }, {merge: true}).then(() => {
-        console.log('user saved successfully')
-      }).catch((reason: any) => {
-        console.log('user was not saved', reason)
-      })
+    }, {merge: true}).then(() => {
+      console.log('user saved successfully')
+    }).catch((reason: any) => {
+      console.log('user was not saved', reason)
+    })
   }
 
   getUser(id: string): Observable<User>{
-    return this.afs.doc('user/'+id).valueChanges() as Observable<User>
-  }*/
-
-  addUser(user: User) {
-     const pushkey = this.afs.createId();
-     user.$key = pushkey;
-     this.usersCollection.doc(pushkey).set(user);
-   }
-
-  getUsers() {
-     return this.user$;
-   }
-
-  modifyStudent(userId: string, userChanges: User) {
-     this.usersCollection.doc(userId).update(userChanges);
-   }
-
-  removeStudent(userId: string) {
-     this.usersCollection.doc(userId).delete();
-   }
-
-
-
+    return this.afs.doc('User/'+id).valueChanges() as Observable<User>
+  }
 }
 

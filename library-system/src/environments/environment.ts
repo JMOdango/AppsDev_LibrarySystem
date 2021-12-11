@@ -4,14 +4,15 @@
 
 export const environment = {
   production: false,
-    firebaseConfig: {
-      apiKey: "AIzaSyBMJzdeWepw2em987qGrkc7iVCsPsjSvhQ",
-      authDomain: "deep-voyagers-library-system.firebaseapp.com",
-      projectId: "deep-voyagers-library-system",
-      storageBucket: "deep-voyagers-library-system.appspot.com",
-      messagingSenderId: "217132392267",
-      appId: "1:217132392267:web:60abf556a9ecd9296e52ce",
-  },
+  firebaseConfig: {
+    apiKey: "AIzaSyBMJzdeWepw2em987qGrkc7iVCsPsjSvhQ",
+    authDomain: "deep-voyagers-library-system.firebaseapp.com",
+    databaseURL: "https://deep-voyagers-library-system-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "deep-voyagers-library-system",
+    storageBucket: "deep-voyagers-library-system.appspot.com",
+    messagingSenderId: "217132392267",
+    appId: "1:217132392267:web:60abf556a9ecd9296e52ce"
+  }
 };
 
 /*
